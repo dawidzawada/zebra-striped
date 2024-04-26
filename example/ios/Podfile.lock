@@ -1074,6 +1074,10 @@ PODS:
   - Yoga (1.14.0)
   - ZebraStriped (0.1.0):
     - ExpoModulesCore
+    - ZXingObjC (~> 3.6.9)
+  - ZXingObjC (3.6.9):
+    - ZXingObjC/All (= 3.6.9)
+  - ZXingObjC/All (3.6.9)
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
@@ -1140,6 +1144,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - SocketRocket
+    - ZXingObjC
 
 EXTERNAL SOURCES:
   boost:
@@ -1312,7 +1317,8 @@ SPEC CHECKSUMS:
   ReactCommon: 2aa35648354bd4c4665b9a5084a7d37097b89c10
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 805bf71192903b20fc14babe48080582fee65a80
-  ZebraStriped: 261f1818b6024567e22fb8afea19f53165de0202
+  ZebraStriped: b5a9a09af02072dced2395c67c9f4fb82e1b6ca6
+  ZXingObjC: 8898711ab495761b2dbbdec76d90164a6d7e14c5
 
 PODFILE CHECKSUM: 173ce3c32607a4d30e3e1748012b75238924bddc
 

@@ -34,10 +34,26 @@ public class ZebraStripedModule: Module {
 
     // Enables the module to be used as a native view. Definition components that are accepted as part of the
     // view definition: Prop, Events.
-    View(ZebraStripedView.self) {
+    View(ZebraCodeView.self) {
       // Defines a setter for the `name` prop.
-      Prop("name") { (view: ZebraStripedView, prop: String) in
-        print(prop)
+      Prop("value") { (view: ZebraCodeView, value: String) in
+          view.value = value
+      }
+        
+      Prop("format") { (view: ZebraCodeView, format: String) in
+          view.updateFormat(CodeFormat(rawValue: format)!)
+      }
+        
+      Prop("size") { (view: ZebraCodeView, size: CGSize) in
+          view.size = size
+      }
+        
+      Prop("onColor") { (view: ZebraCodeView, color: CGColor?) in
+          view.onColor = color
+      }
+        
+      Prop("offColor") { (view: ZebraCodeView, color: CGColor?) in
+          view.offColor = color
       }
     }
   }

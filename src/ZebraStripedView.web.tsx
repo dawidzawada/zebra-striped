@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { ZebraStripedViewProps } from './ZebraStriped.types';
+import { ZebraCodeProps } from "./ZebraStriped.types";
 
-export default function ZebraStripedView(props: ZebraStripedViewProps) {
+export default function ZebraStripedView(props: ZebraCodeProps) {
   return (
     <div>
-      <span>{props.name}</span>
+      <span>{props.value}</span>
     </div>
   );
 }
