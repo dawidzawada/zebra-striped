@@ -1,9 +1,5 @@
 import { ViewProps } from "react-native";
 
-export type ChangeEventPayload = {
-  value: string;
-};
-
 export type CodeFormat =
   | "code-128"
   | "code-39"
@@ -19,10 +15,15 @@ export type CodeFormat =
   | "aztec"
   | "data-matrix";
 
-export type ZebraCodeProps = {
+export interface ZebraCodeProps extends ViewProps {
   value: string;
   format: CodeFormat;
   size: { width: number; height: number };
   onColor?: string;
   offColor?: string;
-} & ViewProps;
+}
+
+export interface ZebraCodeNativeAndroidProps
+  extends Omit<ZebraCodeProps, "size"> {
+  size: Array<number>;
+}

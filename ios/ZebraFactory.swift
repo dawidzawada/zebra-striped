@@ -11,7 +11,6 @@ struct ZebraFactory {
     
     let DEFAULT_ON_COLOR = UIColor.black.cgColor
     let DEFAULT_OFF_COLOR = UIColor.white.cgColor
-    let FALLBACK_COLOR = CGColor(red: 111, green: 111, blue: 111, alpha: 1)
     
     func generateCodeImage(value: String, format: ZXBarcodeFormat, size: CGSize, onColor _onColor: CGColor?, offColor _offColor: CGColor?) -> UIImage {
         let writer = ZXMultiFormatWriter();

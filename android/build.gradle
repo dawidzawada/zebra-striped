@@ -89,4 +89,6 @@ repositories {
 dependencies {
   implementation project(':expo-modules-core')
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${getKotlinVersion()}"
+  implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+  implementation 'com.github.kenglxn.QRGen:android:3.0.1'
 }

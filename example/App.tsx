@@ -3,22 +3,22 @@ import { StyleSheet, TextInput, View } from "react-native";
 import { ZebraCode } from "zebra-striped";
 
 export default function App() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("I'm very striped!");
 
   return (
     <View style={styles.container}>
       <ZebraCode
         value={value}
         format="qr"
-        onColor="#000000"
-        offColor="#ffffff"
         size={{ width: 300, height: 300 }}
-        style={{
-          borderWidth: 1,
-          borderColor: "#000000",
-        }}
+        onColor="#141414"
+        offColor="#ffffff"
       />
-      <TextInput onChangeText={(text) => setValue(text)} style={styles.input} />
+      <TextInput
+        value={value}
+        onChangeText={(text) => setValue(text)}
+        style={styles.input}
+      />
     </View>
   );
 }
