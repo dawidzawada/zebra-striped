@@ -1,6 +1,6 @@
 import { requireNativeViewManager } from "expo-modules-core";
 import * as React from "react";
-import { ZebraCodeProps } from "./ZebraStriped.types";
+import { ZebraCodeProps } from "../ZebraStriped.types";
 
 const NativeView: React.ComponentType<ZebraCodeProps> =
   requireNativeViewManager("ZebraStriped");

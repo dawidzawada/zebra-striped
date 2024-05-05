@@ -1,5 +1,5 @@
 // import ZebraStripedModule from "./ZebraStripedModule";
-import ZebraCode from "./ZebraCode";
+import ZebraCode from "./ZebraCode/ZebraCode";
 import { ZebraCodeProps } from "./ZebraStriped.types";
 
 // export function hello(): string {

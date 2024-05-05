@@ -3,7 +3,7 @@ import * as React from "react";
 import {
   ZebraCodeProps,
   ZebraCodeNativeAndroidProps,
-} from "./ZebraStriped.types";
+} from "../ZebraStriped.types";
 
 const NativeView: React.ComponentType<ZebraCodeNativeAndroidProps> =
   requireNativeViewManager("ZebraStriped");
