@@ -5,7 +5,6 @@ import ZXingObjC
 class ZebraCodeView: ExpoView {
     
     let imageView = UIImageView()
-    let factory = ZebraFactory()
     
     private var _format: ZXBarcodeFormat?
     
@@ -42,34 +41,7 @@ class ZebraCodeView: ExpoView {
     
     
     func updateFormat(_ format: CodeFormat){
-        switch format {
-            case .ean8:
-                _format = kBarcodeFormatEan8
-            case .ean13:
-                _format = kBarcodeFormatEan13
-            case .upcA:
-                _format = kBarcodeFormatUPCA
-            case .upcE:
-                _format = kBarcodeFormatUPCE
-            case .code39:
-                _format = kBarcodeFormatCode39
-            case .code93:
-                _format = kBarcodeFormatCode93
-            case .code128:
-                _format = kBarcodeFormatCode128
-            case .itf:
-                _format = kBarcodeFormatITF
-            case .codabar:
-                _format = kBarcodeFormatCodabar
-            case .qrcode:
-                _format = kBarcodeFormatQRCode
-            case .pdf417:
-                _format = kBarcodeFormatPDF417
-            case .dataMatrix:
-                _format = kBarcodeFormatDataMatrix
-            case .aztec:
-                _format = kBarcodeFormatAztec
-        }
+        _format = ZebraFactory.parseToBarcodeFormat(codeFormat: format)
         
         renderImage()
     }
@@ -80,7 +52,7 @@ class ZebraCodeView: ExpoView {
             return;
         }
         
-        let image = factory.generateCodeImage(value: codeValue, format: format, size: codeSize, onColor: onColor, offColor: offColor)
+        let image = ZebraFactory.generateCodeImage(value: codeValue, format: format, size: codeSize, onColor: onColor, offColor: offColor)
         imageView.image = image
         imageView.frame = CGRect(x: 0, y: 0, width: codeSize.width, height: codeSize.height)
     }

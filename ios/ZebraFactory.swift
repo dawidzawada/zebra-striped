@@ -9,10 +9,10 @@ import ZXingObjC
 
 struct ZebraFactory {
     
-    let DEFAULT_ON_COLOR = UIColor.black.cgColor
-    let DEFAULT_OFF_COLOR = UIColor.white.cgColor
+    static let DEFAULT_ON_COLOR = UIColor.black.cgColor
+    static let DEFAULT_OFF_COLOR = UIColor.white.cgColor
     
-    func generateCodeImage(value: String, format: ZXBarcodeFormat, size: CGSize, onColor _onColor: CGColor?, offColor _offColor: CGColor?) -> UIImage {
+    static func generateCodeImage(value: String, format: ZXBarcodeFormat, size: CGSize, onColor _onColor: CGColor?, offColor _offColor: CGColor?) -> UIImage {
         let writer = ZXMultiFormatWriter();
         let hints = ZXEncodeHints()
         hints.margin = 0
@@ -26,6 +26,37 @@ struct ZebraFactory {
             return UIImage()
         }
         
+    }
+    
+    static func parseToBarcodeFormat(codeFormat: CodeFormat) -> ZXBarcodeFormat {
+        switch codeFormat {
+        case .ean8:
+            return kBarcodeFormatEan8
+        case .ean13:
+            return kBarcodeFormatEan13
+        case .upcA:
+            return kBarcodeFormatUPCA
+        case .upcE:
+            return kBarcodeFormatUPCE
+        case .code39:
+            return kBarcodeFormatCode39
+        case .code93:
+            return kBarcodeFormatCode93
+        case .code128:
+            return kBarcodeFormatCode128
+        case .itf:
+            return kBarcodeFormatITF
+        case .codabar:
+            return kBarcodeFormatCodabar
+        case .qrcode:
+            return kBarcodeFormatQRCode
+        case .pdf417:
+            return kBarcodeFormatPDF417
+        case .dataMatrix:
+            return kBarcodeFormatDataMatrix
+        case .aztec:
+            return kBarcodeFormatAztec
+        }
     }
     
 }

@@ -15,10 +15,12 @@ export type CodeFormat =
   | "aztec"
   | "data-matrix";
 
+export type CodeSize = { width: number; height: number };
+
 export interface ZebraCodeProps extends ViewProps {
   value: string;
   format: CodeFormat;
-  size: { width: number; height: number };
+  size: CodeSize;
   onColor?: string;
   offColor?: string;
 }

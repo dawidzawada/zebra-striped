@@ -1,9 +1,21 @@
-// import ZebraStripedModule from "./ZebraStripedModule";
+import ZebraStripedModule from "./ZebraStripedModule";
 import ZebraCode from "./ZebraCode/ZebraCode";
-import { ZebraCodeProps } from "./ZebraStriped.types";
+import { ZebraCodeProps, CodeSize } from "./ZebraStriped.types";
 
-// export function hello(): string {
-//   return ZebraStripedModule.hello();
-// }
+export function getBase64Code(
+  value: string,
+  format: string,
+  size: CodeSize,
+  onColor?: string,
+  offColor?: string
+): string | null {
+  return ZebraStripedModule.getBase64Code(
+    value,
+    format,
+    size,
+    onColor,
+    offColor
+  );
+}
 
-export { ZebraCode, ZebraCodeProps };
+export { ZebraCode, ZebraCodeProps, CodeSize };
