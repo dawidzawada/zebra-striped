@@ -1,32 +1,34 @@
 package expo.modules.zebrastriped
 
+import android.graphics.Bitmap
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
+import java.io.ByteArrayOutputStream
+import java.lang.Exception
+import java.util.Base64
 
 class ZebraStripedModule : Module() {
-  // Each module class must implement the definition function. The definition consists of components
-  // that describes the module's functionality and behavior.
-  // See https://docs.expo.dev/modules/module-api for more details about available components.
   override fun definition() = ModuleDefinition {
-    // Sets the name of the module that JavaScript code will use to refer to the module. Takes a string as an argument.
-    // Can be inferred from module's class name, but it's recommended to set it explicitly for clarity.
-    // The module will be accessible from `requireNativeModule('ZebraStriped')` in JavaScript.
     Name("ZebraStriped")
 
-    // Defines a JavaScript synchronous function that runs the native code on the JavaScript thread.
-    Function("hello") {
-      "Hello world! 👋"
+    Function("getBase64Code") { value: String, format: String, size: Pair<Int, Int>, onColor: String?, offColor: String? ->
+      val factory = ZebraFactory()
+      val barcodeFormat = factory.parseToBarcodeFormat(CodeFormat.valueFromString(format))
+
+      val bos = ByteArrayOutputStream()
+      val bitmap = factory.generateCodeBitmap(value, barcodeFormat, size, onColor, offColor)
+      bitmap?.compress(Bitmap.CompressFormat.PNG, 100, bos);
+
+      return@Function Base64.getEncoder().encodeToString(bos.toByteArray())
     }
 
-    // Enables the module to be used as a native view. Definition components that are accepted as part of
-    // the view definition: Prop, Events.
     View(ZebraCodeView::class) {
       Prop("value") { view: ZebraCodeView, value: String ->
         view.value = value
       }
 
-      Prop("format") { view: ZebraCodeView, format: String ->
-        view.updateFormat(format)
+      Prop("format") { view: ZebraCodeView, formatString: String ->
+        view.updateFormat(CodeFormat.valueFromString(formatString))
       }
 
       Prop("size") { view: ZebraCodeView, size: Pair<Int, Int> ->

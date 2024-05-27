@@ -13,5 +13,16 @@ enum class CodeFormat(val value: String) {
     QRCODE("qr"),
     PDF417("pdf-417"),
     DATAMATRIX("data-matrix"),
-    AZTEC("aztec")
+    AZTEC("aztec");
+
+    companion object {
+        fun valueFromString(stringFormat: String): CodeFormat {
+            for (member in values()) {
+                if (member.value == stringFormat) {
+                    return member
+                }
+            }
+            throw Error("Invalid format!")
+        }
+    }
 }
