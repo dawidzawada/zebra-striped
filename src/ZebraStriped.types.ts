@@ -25,7 +25,6 @@ export interface ZebraCodeProps extends ViewProps {
   offColor?: string;
 }
 
-export interface ZebraCodeNativeAndroidProps
-  extends Omit<ZebraCodeProps, "size"> {
-  size: Array<number>;
+export interface ZebraCodeNativeProps extends Omit<ZebraCodeProps, "size"> {
+  size: CodeSize | Array<number>;
 }
