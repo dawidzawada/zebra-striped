@@ -32,21 +32,21 @@ Feedback is highly appreciated!
 
 Here's a basic usage of **ZebraCode** component:
 
-```
+```js
 <ZebraCode
   value={"I'm very striped!"}
   format="qr"
-  size={{width: 300, height: 300}}
+  size={{ width: 300, height: 300 }}
 />
 ```
 
 Want a custom colors? 🎨 I've got you covered:
 
-```
+```js
 <ZebraCode
   value={"I'm very striped!"}
   format="qr"
-  size={{width: 300, height: 300}}
+  size={{ width: 300, height: 300 }}
   onColor="#141414"
   offColor="#ffffff"
 />
@@ -56,14 +56,14 @@ Want a custom colors? 🎨 I've got you covered:
 
 Or maybe you just want to have a data returned in Base64 format? Here's how you can do it:
 
-```
+```js
 const base64Image = getBase64Code("I'm base64'ed!", "qr", {
-    width: 300,
-    height: 300
+  width: 300,
+  height: 300,
 });
 ```
 
-```
+```js
 const base64Image = getBase64Code("I'm custom-colored!", "qr", {
     width: 300,
     height: 300
