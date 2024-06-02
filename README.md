@@ -6,7 +6,7 @@ Generate barcodes natively in React Native with the ZXing library underhood!
 
 When I was working on generating QR codes in one of the apps for a client, I realized that JS-based libraries like [BWIP JS](https://www.npmjs.com/package/bwip-js) are not very performant in React Native apps, where performance is especially important for keeping users happy.
 
-I decided to experiment a little and learn about Expo Native Modules, Swift, and Kotlin. This led to the creation of zebra-striped - a performant, native-based library for generating various types of barcodes for React Native.
+I decided to experiment a little and learn about Expo Native Modules, Swift, and Kotlin. This led to the creation of **zebra-striped** - a performant, native-based library for generating various types of barcodes for React Native.
 
 Feedback is highly appreciated!
 
@@ -23,6 +23,10 @@ Feedback is highly appreciated!
 | ITF      |             |
 | UPC-E    |             |
 | UPC-A    |             |
+
+## Performance 🏎️
+
+![benchmark](docs/benchmark.png)
 
 ## Usage
 
@@ -74,19 +78,17 @@ const base64Image = getBase64Code("I'm custom-colored!", "qr", {
 npm install zebra-striped
 ```
 
-### Installation in managed Expo projects
+### Expo 🚀
 
-After installation you'll need to rebuild your dev client. Zebra 🦓 will not work in Expo Go.
+After installation you'll need to rebuild your dev client. Zebra 🦓 will not work in Expo Go!
 
-For [managed](https://docs.expo.dev/archive/managed-vs-bare/) Expo projects, please follow the installation instructions in the [API documentation for the latest stable release](#api-documentation). If you follow the link and there is no documentation available then this library is not yet usable within managed projects &mdash; it is likely to be included in an upcoming Expo SDK release.
+### Plain React Native 📚
 
-### Installation in bare React Native projects
+For plain React Native project you must install and configure `expo` package, follow the ["Install Expo modules in an existing React Native project"](https://docs.expo.dev/bare/installing-expo-modules/) article.
 
-For bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.
+#### iOS 📱
 
-#### Configure for iOS
-
-Run `npx pod-install` after installing the npm package.
+Make sure to run `pod install` in `ios` folder.
 
 ## Contributing
 
