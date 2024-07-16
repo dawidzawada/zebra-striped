@@ -90,6 +90,17 @@ For plain React Native project you must install and configure `expo` package, fo
 
 Make sure to run `pod install` in `ios` folder.
 
+## Dependencies 🏛️
+
+iOS:
+
+- [ZXingObjC](https://github.com/TheLevelUp/ZXingObjC)
+
+Android:
+
+- [zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded)
+- [QRGen](https://github.com/kenglxn/QRGen)
+
 ## Contributing
 
 Contributions are very welcome, I'm open for any suggestions!
