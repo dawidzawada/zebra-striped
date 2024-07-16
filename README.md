@@ -52,7 +52,7 @@ Want a custom colors? 🎨 I've got you covered:
 />
 ```
 
-(Colors are accepted only in HEX)
+<u>Colors are accepted only in HEX! 🎨</u>
 
 Or maybe you just want to have a data returned in Base64 format? Here's how you can do it:
 
@@ -80,7 +80,7 @@ npm install zebra-striped
 
 ### Expo 🚀
 
-After installation you'll need to rebuild your dev client. Zebra 🦓 will not work in Expo Go!
+After installation you'll need to rebuild your dev client. Zebra 🦓 will not work in Expo Go - it uses 3rd party native dependencies that are not included in Expo by default.
 
 ### Plain React Native 📚
 
