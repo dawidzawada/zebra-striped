@@ -1,6 +1,6 @@
 {
   "name": "zebra-striped",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Generate barcodes natively in React Native with the ZXing library underhood!",
   "main": "build/index.js",
   "types": "build/index.d.ts",
