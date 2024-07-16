@@ -1,8 +1,7 @@
+import Clipboard from "@react-native-clipboard/clipboard";
 import { useState } from "react";
 import { Button, StyleSheet, TextInput, View } from "react-native";
-import Clipboard from "@react-native-clipboard/clipboard";
-
-import { ZebraCode, getBase64Code, CodeSize } from "zebra-striped";
+import { ZebraCode, getBase64Code, CodeSize, CodeFormat } from "zebra-striped";
 
 export default function App() {
   const [value, setValue] = useState("I'm very striped!");
@@ -10,7 +9,8 @@ export default function App() {
 
   const handlePress = () => {
     if (value) {
-      const base64Image = getBase64Code(value, "qr", size);
+      const format: CodeFormat = "qr";
+      const base64Image = getBase64Code(value, format, size);
       Clipboard.setString(`data:image/png;base64,${base64Image}`);
     }
   };

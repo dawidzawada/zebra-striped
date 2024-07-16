@@ -1,7 +1,8 @@
-import ZebraStripedModule from "./ZebraStripedModule";
+import { Platform } from "react-native";
+
 import ZebraCode from "./ZebraCode/ZebraCode";
 import { ZebraCodeProps, CodeSize, CodeFormat } from "./ZebraStriped.types";
-import { Platform } from "react-native";
+import ZebraStripedModule from "./ZebraStripedModule";
 
 export function getBase64Code(
   value: string,
@@ -25,4 +26,4 @@ export function getBase64Code(
   );
 }
 
-export { ZebraCode, ZebraCodeProps, CodeSize };
+export { ZebraCode, ZebraCodeProps, CodeSize, CodeFormat };
